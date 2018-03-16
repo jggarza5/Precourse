@@ -9,10 +9,9 @@ function sumArray(numbers, cb) {
   // sum up all of the integers in the numbers array
   // pass the result to cb
   // no return is necessary
-  let sum = 0;
-  for(let i = 0; i < numbers.length; i++) {
-    sum = sum + numbers[i];
-  }
+  let sum = numbers.reduce(function(acc, item){
+    return acc + item;
+});
   cb(sum);
 }
 
