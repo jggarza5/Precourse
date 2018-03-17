@@ -11,7 +11,7 @@ function counter() {
   cnt++;
   return cnt;
   }
-
+  
   return increment;
 }
 
