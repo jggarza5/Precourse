@@ -13,9 +13,6 @@ function counter() {
   }
 
   return increment;
-  
-  
-
 }
 
 function cacheFunction(cb) {
@@ -38,9 +35,10 @@ function cacheFunction(cb) {
       arg = x;  
       cache = cb(x); 
       return cache; 
-  } else {
-    return cache;
-  }};
+    } else {
+      return cache;
+    }
+  };
 }
 
 // Do not modify code below this line.
