@@ -117,15 +117,15 @@ function displayToDos() {
 
 function addToDo() {
   
-  const newToDo = document.getElementsById = 'toDoInput';
+  let newToDo = document.getElementById('toDoInput');
 
-  const description = newToDo.Value;
+  const description = newToDo.value;
 
   const todo1 = new ToDo(description);
 
   toDoItems.push(todo1);
 
-  newToDo.Value = '';
+  newToDo.value = '';
 
   displayToDos();
 }
@@ -155,8 +155,8 @@ button.onclick = addToDo;
 function completeToDo(event) {
   // UNCOMMENT THE NEXT LINE
    const index = event.target.id;
-   toDoItems[index];
    displayToDos();
+   return toDoItems[index];
 }
 
 /* STEP 10: Make sure ALL tests pass */
