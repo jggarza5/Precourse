@@ -36,6 +36,7 @@ function ToDo (description) {
 
 ToDo.prototype.completeToDo =  function() {
   this.complete = true;
+  return this.complete;
 };
 
 /*
@@ -59,14 +60,12 @@ function buildToDo(ToDo, index) {
   const toDoShell = document.createElement('div');
   const toDoText = document.createElement('span');
   toDoShell.classList.add('toDoShell');
-  //toDoText.classList.add('toDoText');
   toDoText.id = index;
-  //document.getElementById(index).innerHTML = ToDo.description;
+  toDoText.onclick = completeToDo;
   toDoText.innerHTML = ToDo.description;
   if(ToDo.complete === true) {
     toDoText.classList.add('completeText');
   }
-  toDoText.onclick = completeToDo;
   toDoShell.appendChild(toDoText);
   return toDoShell;
 }
@@ -155,8 +154,8 @@ button.onclick = addToDo;
 function completeToDo(event) {
   // UNCOMMENT THE NEXT LINE
    const index = event.target.id;
+   toDoItems[index].completeToDo();
    displayToDos();
-   return toDoItems[index];
 }
 
 /* STEP 10: Make sure ALL tests pass */
